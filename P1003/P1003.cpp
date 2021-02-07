@@ -1,7 +1,4 @@
 #include<iostream>
-#include<string>
-
-using namespace std;
 
 struct carpet_attributes{
     int leftbottomposition[2]; // {x, y}
@@ -13,13 +10,13 @@ struct carpet_attributes{
 int main(){
     // Step 1: Prepare all values
     int carpet_number; // the number of carpet
-    cin >> carpet_number;
+    std::cin >> carpet_number;
     carpet_attributes carpet[carpet_number]; // arrays to store attributes of carpets
 
     for (int i = 0; i < carpet_number; i++)
     {
         carpet_attributes temp_carpet; // temporary struct object
-        cin >> temp_carpet.leftbottomposition[0] >> temp_carpet.leftbottomposition[1] // get attributes of your catpet from input(x and y)
+        std::cin >> temp_carpet.leftbottomposition[0] >> temp_carpet.leftbottomposition[1] // get attributes of your catpet from input(x and y)
             >> temp_carpet.x_length >> temp_carpet.y_length; // get attributes of your catpet from input(width and height)
         temp_carpet.righttopposition[0] = temp_carpet.leftbottomposition[0] + temp_carpet.x_length; // set x of right top corner
         temp_carpet.righttopposition[1] = temp_carpet.leftbottomposition[1] + temp_carpet.y_length; // set y of right top corner
@@ -27,7 +24,7 @@ int main(){
     }
     
     int pointposition[2]; // point position
-    cin >> pointposition[0] >> pointposition[1];
+    std::cin >> pointposition[0] >> pointposition[1];
 
     // Step 2: Which carpet is this point in?
     int po = -1; // store the result(carpet number), default -1 if there is no eligible carpet
@@ -43,6 +40,6 @@ int main(){
                 po = i + 1; // we must +1 because actual value is bigger than index value
             }   
     }
-    cout << po; // output result
+    std::cout << po; // output result
     return 0;
 }
