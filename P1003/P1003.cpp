@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 
 struct carpet_attributes{
     int leftbottomposition[2]; // {x, y}
